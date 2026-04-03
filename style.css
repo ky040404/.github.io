@@ -1,0 +1,28 @@
+#all {
+    display: grid;
+    height: 90vh;
+    place-content: center;
+    justify-items: center;
+}
+
+#tbl {
+    border-collapse: collapse;
+}
+
+#tbl > tbody > tr > * {
+    border: 2px solid white;
+    background-color: black;
+}
+
+#tbl_sub {
+    border-collapse: collapse;
+}
+
+#tbl_sub > tbody > tr > * {
+    border: 2px solid white;
+    background-color: gray;
+}
+
+#all > * {
+    margin: 5px;
+}
