@@ -119,7 +119,15 @@ const myAPI = (function(){
                     }
 
                     // 落下カウンタを利用してカウントダウン表示
-                    document.getElementById("dropCount").textContent = 3 - Math.floor((timestamp - sceneBeginTimestamp) / 1000);
+                    var i;
+                    document.getElementById("dropCount").textContent = "";
+                    for(i = 0; i < 12 - Math.floor((timestamp - sceneBeginTimestamp) / 250); i++) {
+                        document.getElementById("dropCount").textContent += "- ";
+                    }
+                    document.getElementById("dropCount").textContent += 3 - Math.floor((timestamp - sceneBeginTimestamp) / 1000);
+                    for(i = 0; i < 12 - Math.floor((timestamp - sceneBeginTimestamp) / 250); i++) {
+                        document.getElementById("dropCount").textContent += " -";
+                    }
 
                     break;
 
@@ -166,7 +174,7 @@ const myAPI = (function(){
                         document.getElementById("highScore").textContent = "best time: " + highScore.toFixed(2);
 
                         // Twitterリンク表示
-                        document.getElementById("twitter").href = "https://twitter.com/intent/tweet?text=" + "ki-oku %23kioku_puzzle%0A%0Abest time: " + highScore.toFixed(2) + "%0A&url=" + location.href;
+                        document.getElementById("twitter").href = "https://twitter.com/intent/tweet?text=" + "ki-oku %23kioku_puzzle%0Abest time: " + highScore.toFixed(2) + "&url=" + location.href;
                         document.getElementById("twitter").style.visibility = "visible";
 
                         document.getElementById("tbl").style.display = "none";

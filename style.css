@@ -5,6 +5,12 @@
     justify-items: center;
 }
 
+#readme {
+    display: grid;
+    place-content: center;
+    justify-items: center;
+}
+
 #tbl {
     border-collapse: collapse;
 }
